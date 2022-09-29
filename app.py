@@ -27,7 +27,7 @@ def create():
         soup = BeautifulSoup(r.text, 'html.parser')
         images = soup.find_all('img')
         
-        for image in images[:2]:
+        for image in images:
             name = image['id']
             link = image['src']
             with open(name.replace(' ', '-').replace('/', '') + '.jpg', 'wb') as f:
