@@ -20,8 +20,8 @@ def create():
         r = requests.get(url)
         if os.path.exists(os.path.abspath(os.path.join(os.getcwd(),"static/manga",""))):
             shutil.rmtree(os.path.abspath(os.path.join(os.getcwd(),"static/manga","")))
-        if os.path.exists(os.path.abspath(os.path.join(os.getcwd(),"static/manga","chapter.zip"))):
-            os.remove(os.path.abspath(os.path.join(os.getcwd(),"static/manga","chapter.zip")))
+        if os.path.exists(os.path.abspath(os.path.join(os.getcwd(),"chapter.zip"))):
+            os.remove(os.path.abspath(os.path.join(os.getcwd(),"chapter.zip")))
         os.mkdir(os.path.abspath(os.path.join(os.getcwd(),"static/manga","")))
         os.chdir(os.path.abspath(os.path.join(os.getcwd(),"static/manga","")))
         soup = BeautifulSoup(r.text, 'html.parser')
@@ -36,7 +36,8 @@ def create():
                 
                 print('Writing: ', name)
         os.chdir(os.path.abspath(os.path.join(os.getcwd(),"..")))
-        shutil.make_archive("chapter", 'zip', os.path.abspath(os.path.join(os.getcwd(),"manga","")))
+        os.chdir(os.path.abspath(os.path.join(os.getcwd(),"..")))
+        shutil.make_archive("chapter", 'zip', os.path.abspath(os.path.join(os.getcwd(),"static/manga","")))
         
 
                 
