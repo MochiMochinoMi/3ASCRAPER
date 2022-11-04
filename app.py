@@ -34,7 +34,6 @@ def create():
                 with open(name.replace(' ', '-').replace('/', '') + '.jpg', 'wb') as f:
                     im = requests.get(link)
                     f.write(im.content)
-                    
                     print('Writing: ', name)
             os.chdir(os.path.abspath(os.path.join(os.getcwd(),"..")))
             os.chdir(os.path.abspath(os.path.join(os.getcwd(),"..")))
