@@ -19,21 +19,14 @@
     </head>
 
     <!-- Updated 4.6.2016 added Pure JS and jQuery Support-->
-<body>
-        <form class="search-box" action="/" method="post">
+<body>        
+    <form  class="search-bar" action="/" method="post">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <main>
-            <div class="srch_wrpr">
-                <input type="checkbox"  class="checkbox">
-                <div class="srch_sb_cnt">
-                    <input  required name="url"  class="sech_txt_inpt" placeholder="link to the chapter...">
-                    <button class="srch_btn">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </div>
-          </main>
-          </form>
+        <input type="search" name="search" pattern=".*\S.*" required>
+        <button class="search-btn" type="submit">
+            <span>Search</span>
+        </button>                   
+    </form>
   </body>   
 
 
