@@ -14,7 +14,7 @@ app.secret_key = 'super secret key'
 @app.route("/",methods=["GET", "POST"])
 def create():
     if request.method == "POST":
-        url=request.form.get("url")
+        url=request.form.get("search")
         if url[:23] == "https://3asq.org/manga/":
             r = requests.get(url)
             if os.path.exists(os.path.abspath(os.path.join(os.getcwd(),"static/manga",""))):
