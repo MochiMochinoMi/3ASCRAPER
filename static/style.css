@@ -1,22 +1,159 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900');
-    @import url('https://fonts.googleapis.com/css?family=Playball');
-    * {box-sizing: border-box;}
-    body {background-image: url("https://images8.alphacoders.com/114/1147926.jpg");background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;}
-    main {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1;}
-    main:before {content: '3ASQ'; font-family: 'Playball', sans-serif; position: absolute; top: -70px; left: 50%; color: rgba(0, 0, 0, 0.8); font-size: 26px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; transform: translateX(-50%); white-space: nowrap; pointer-events: none; color: #fff; text-shadow: hoff voff blur #000; }
-    main:after {content: 'for Dua lipa'; font-family: 'Playball', cursive; position: absolute; bottom: -300px; left: 50%; color: rgba(255, 255, 255, 0.010); font-size: 75px; line-height: 140px; white-space: nowrap; text-transform: lowercase; transform: translateX(-50%); pointer-events: none; z-index: -1; }
-    .srch_wrpr {width: 400px; max-width: 400px; height: 70px; position: relative; z-index: 1; }
-    .srch_sb_cnt {width: 70px; height: 70px; background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%); background-color: transparent; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); overflow: hidden; transition: all 0.4s ease-in-out 0s; z-index: 0; border-radius: 5px; }
-    .sech_txt_inpt {opacity: 0; height: 50px; left: 10px; border-radius: 30px; border: 0; width: 94%; padding: 0 60px 0 15px; background-color: transparent; color: #333; font-size: 15px; transition: all 0.4s ease-in-out 0s; }
-    .sech_txt_inpt:focus {letter-spacing: 2px;text-transform: uppercase;}
-    .sech_txt_inpt:focus, .srch_btn:focus {outline: none;}
-    .sech_txt_inpt, .srch_btn {position: absolute; z-index: 1; top: 50%; transform: translateY(-50%); }
-    .srch_btn {width: 70px; height: 70px; right: 0; background-image: none; background-color: transparent; border:0; transition: all 0.4s ease-in-out 0s; font-size: 26px; cursor: pointer; color: #545454; }
-    .srch_btn:after {position: absolute; content: '\f00d'; font-family: fontAwesome; top: 50%; transform: translateY(-50%) rotate(0deg); right: 10px; height: 30px; width: 30px; font-size: 28px; z-index: -1; visibility: hidden;}
-    input.checkbox {position: absolute; z-index: 1; width: 70px; height: 70px; opacity: 0.0; right: 30%; top: 50%; transform: translate(-50%, -50%); transition: all 0.4s ease-in-out 0s; cursor: pointer; }
-    input.checkbox:checked { width: 30px; height: 30px; right: -14%; transform: translate(-50%, -60%);}
-    input.checkbox:checked ~ .srch_sb_cnt {width: 100%; border-radius: 40px;background-color: #333; overflow: visible;}
-    input.checkbox:checked ~ .srch_sb_cnt .srch_btn { width: 50px; height: 50px; right: 10px; border-radius: 100%; font-size: 20px; background-image: linear-gradient(to top, #000000 0%, hsl(0, 100%, 59%) 100%); color: #fff;text-shadow: 1px 1px 2px rgba(0,0,0,0.2);}
-    input.checkbox:checked ~ .srch_sb_cnt .sech_txt_inpt { opacity: 1; }
-    input.checkbox:checked ~ .srch_sb_cnt .srch_btn:after {transform: translateY(-50%) rotate(90deg); right: -50px; visibility: visible; transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570); transition-delay: 0.5s; color: white; }
-    
+
+* {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+}
+body, button, input {
+	font: 1em Hind, sans-serif;
+	line-height: 1.5em;
+}
+body, input {
+	color: #171717;
+}
+body, .search-bar {
+	display: flex;
+}
+body {
+	background-image: url("https://i.ibb.co/dMxMHzs/wallpaperflare-cropped-1.jpg");background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;
+	height: 100vh;
+}
+.search-bar input,
+.search-btn, 
+.search-btn:before, 
+.search-btn:after {
+	transition: all 0.25s ease-out;
+}
+.search-bar input,
+.search-btn {
+	width: 3em;
+	height: 3em;
+}
+.search-bar input:invalid:not(:focus),
+.search-btn {
+	cursor: pointer;
+}
+.search-bar,
+.search-bar input:focus,
+.search-bar input:valid  {
+	width: 100%;
+}
+.search-bar input:focus,
+.search-bar input:not(:focus) + .search-btn:focus {
+	outline: transparent;
+}
+.search-bar {
+	margin: auto;
+	padding: 1.5em;
+	justify-content: center;
+	max-width: 30em;
+}
+.search-bar input {
+	background: transparent;
+	border-radius: 1.5em;
+	box-shadow: 0 0 0 0.4em #171717 inset;
+	padding: 0.75em;
+	transform: translate(0.5em,0.5em) scale(0.5);
+	transform-origin: 100% 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.search-bar input:focus,
+.search-bar input:valid {
+	background: #fff;
+	border-radius: 0.375em 0 0 0.375em;
+	box-shadow: 0 0 0 0.1em #d9d9d9 inset;
+	transform: scale(1);
+}
+.search-btn {
+	background: #171717;
+	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
+	padding: 0.75em;
+	position: relative;
+	transform: translate(0.25em,0.25em) rotate(45deg) scale(0.25,0.125);
+	transform-origin: 0 50%;
+}
+.search-btn:before, 
+.search-btn:after {
+	content: "";
+	display: block;
+	opacity: 0;
+	position: absolute;
+}
+.search-btn:before {
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	top: 0.75em;
+	left: 0.75em;
+	width: 1.2em;
+	height: 1.2em;
+}
+.search-btn:after {
+	background: #f1f1f1;
+	border-radius: 0 0.25em 0.25em 0;
+	top: 51%;
+	left: 51%;
+	width: 0.75em;
+	height: 0.25em;
+	transform: translate(0.2em,0) rotate(45deg);
+	transform-origin: 0 50%;
+}
+.search-btn span {
+	display: inline-block;
+	overflow: hidden;
+	width: 1px;
+	height: 1px;
+}
+
+/* Active state */
+.search-bar input:focus + .search-btn,
+.search-bar input:valid + .search-btn {
+	background: #2a292b;
+	border-radius: 0 0.375em 0.375em 0;
+	transform: scale(1);
+}
+.search-bar input:focus + .search-btn:before, 
+.search-bar input:focus + .search-btn:after,
+.search-bar input:valid + .search-btn:before, 
+.search-bar input:valid + .search-btn:after {
+	opacity: 1;
+}
+.search-bar input:focus + .search-btn:hover,
+.search-bar input:valid + .search-btn:hover,
+.search-bar input:valid:not(:focus) + .search-btn:focus {
+	background: #4b4949;
+}
+.search-bar input:focus + .search-btn:active,
+.search-bar input:valid + .search-btn:active {
+	transform: translateY(1px);
+}
+@media only screen and (min-width: 1025px) {
+    .mobile-only {
+        background-image: url("https://i.ibb.co/dMxMHzs/wallpaperflare-cropped-1.jpg");background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;
+    }
+
+@media screen and (prefers-color-scheme: dark) {
+	body, input {
+		color: #f1f1f1;
+	}
+	body {
+		background-image: url("https://r4.wallpaperflare.com/wallpaper/131/480/871/moonlight-guts-anime-moon-wallpaper-b9c008bd310addcb46c7481f2001d6ad.jpg");background-size: cover;background-repeat: no-repeat;background-attachment: fixed;background-position: center;
+	}
+	.search-bar input {
+		box-shadow: 0 0 0 0.4em #f1f1f1 inset;
+	}
+	.search-bar input:focus,
+	.search-bar input:valid {
+		background: #3d3d3d;
+		box-shadow: 0 0 0 0.1em #3d3d3d inset;
+	}
+	.search-btn {
+		background: #f1f1f1;
+	}
+}}
