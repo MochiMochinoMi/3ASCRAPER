@@ -4,9 +4,6 @@
 ### Technologies
 Flask
 Python
-SQLite
-Javascript
-jQuery
 HTML
 CSS
 Bootstrap 5
