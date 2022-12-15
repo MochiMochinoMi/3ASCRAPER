@@ -26,3 +26,19 @@ the main things that i learned in this project are these:
 -dynmaic paths how to work with them how to know where you are and how to maniuplate paths.
 -requests and BeautifulSoup all about scraping and accessing tags and getting what i want from them.
 -how to return a file (how to let the user download).
+
+##Technologies
+Flask
+Python
+SQLite
+Javascript
+jQuery
+HTML
+CSS
+Bootstrap 5
+
+##Installation
+Clone / fork this repository.
+Create a virtual environment in your local directory.
+Install the required libraries that are listed in requirements.txt.
+Run the application:$ python3 app.py
