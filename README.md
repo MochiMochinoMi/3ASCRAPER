@@ -1,6 +1,22 @@
 #manga.scraper
 #### Video Demo:  <URL HERE>
 ## Description:
+### Technologies
+Flask
+Python
+SQLite
+Javascript
+jQuery
+HTML
+CSS
+Bootstrap 5
+
+### Installation
+1. Clone / fork this repository.
+2. Create a virtual environment in your local directory.
+3. Install the required libraries that are listed in requirements.txt.
+4. Run the application:$ python3 app.py
+
 ### The idea?
 Honestly i got the idea because i needed to solve a problem that i had, in my dorm room i barley have wifi signal or mobile network and i couldnt read my favorite mangas
 due to this problem ,also even if i do have internet the sites that offer these scans are laggy and filled with ads so i created this manga scraping webapp to fix this problem.
@@ -27,18 +43,5 @@ the main things that i learned in this project are these:
 -requests and BeautifulSoup all about scraping and accessing tags and getting what i want from them.
 -how to return a file (how to let the user download).
 
-##Technologies
-Flask
-Python
-SQLite
-Javascript
-jQuery
-HTML
-CSS
-Bootstrap 5
 
-##Installation
-Clone / fork this repository.
-Create a virtual environment in your local directory.
-Install the required libraries that are listed in requirements.txt.
-Run the application:$ python3 app.py
+
