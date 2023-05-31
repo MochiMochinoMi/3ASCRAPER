@@ -40,7 +40,7 @@ def create():
             name=session['my_var']
             shutil.make_archive("chap/"+name, 'zip', os.path.abspath(os.path.join(os.getcwd(),"Manga","")))                        
             return redirect(url_for('downloadFile'))
-        elif url[:38] == "https://onepiecechapters.com/chapters/":
+        elif url[:30] == "https://tcbscans.com/chapters/":
             r = requests.get(url)
             if os.path.exists(os.path.abspath(os.path.join(os.getcwd(),"static/manga",""))):
                 shutil.rmtree(os.path.abspath(os.path.join(os.getcwd(),"static/manga","")))
